@@ -1,2 +1,3 @@
-# docker-tzabbix
-Telegram bot пока что просто бот но планируется его использовать с zabbix
+docker build --force-rm --no-cache --tag=dtulyakov/tzabbix:latest . \
+  && docker create --restart=always --name=TZabbix dtulyakov/tzabbix \
+  && docker start TZabbix
