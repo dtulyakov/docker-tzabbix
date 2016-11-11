@@ -6,10 +6,15 @@ services:
   - docker
 
 before_install:
-- echo docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - docker build -t dtulyakov/tzabbix:latest .
 - docker run -d dtulyakov/tzabbix:latest
 - docker ps -a
 
 script:
 - bundle show
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push dtulyakov/tzabbix:latest;
+    fi
