@@ -4,6 +4,10 @@ notifications:
       - dtulyakov@gmail.com
       - dtulyakov.log@gmail.com
 
+addons:
+    code_climate:
+        repo_token: b5c66c7400465fd6590d7812f0b45e8494cdf78a9fe29ffd0b2b582fa4c78696
+
 sudo: required
 
 language: ruby
