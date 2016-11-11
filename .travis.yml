@@ -1,3 +1,9 @@
+notifications:
+  email:
+    recipients:
+      - dtulyakov@gmail.com
+      - dtulyakov.log@gmail.com
+
 sudo: required
 
 language: ruby
