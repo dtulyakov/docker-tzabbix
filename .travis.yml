@@ -17,7 +17,7 @@ services:
 
 before_install:
 - docker build -t dtulyakov/tzabbix:latest .
-- docker run -d dtulyakov/tzabbix:latest
+- docker run -d -e TOKEN="$TOKEN" dtulyakov/tzabbix:latest
 - docker ps -a
 
 script:
